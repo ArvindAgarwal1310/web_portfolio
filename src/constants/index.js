@@ -5,16 +5,17 @@ import {
   LyraHome,
   StockAnalysis,
   analyser360,
+  assessify,
   aws,
   backend,
   c,
   creator,
   css,
   datadive_ai,
+  docker,
   flutter,
   git,
   github2,
-  html,
   invsto,
   java,
   javascript,
@@ -87,8 +88,8 @@ import {
   ]
   const technologies = [
     {
-      name: "HTML 5",
-      icon: html,
+      name: "Docker",
+      icon: docker,
     },
     {
       name: "CSS 3",
@@ -236,6 +237,40 @@ import {
   ];
   
   const projects = [
+    {
+      name: "Assessify : AI-Powered Interview & Screening Platform",
+      description:
+        "Developed an end-to-end voice-based mock-interview system that personalizes questions from a candidate’s r´esum´e and the target Job Description.",
+      tags: [
+        {
+          name: "Next JS",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Database Management",
+          color: "green-text-gradient",
+        },
+        {
+          name: "AWS",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "Machine Learning",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Git Actions",
+          color: "pink-text-gradient",
+        },
+
+      ],
+      image: assessify,
+      site_link: "https://www.assessify.in",
+    },
     {
       name: "Brain Tumour Segmentation",
       description:

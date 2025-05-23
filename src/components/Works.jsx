@@ -1,11 +1,10 @@
-import React from "react";
-import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 
-import { styles } from "../styles";
-import { github, documentationImg } from "../assets";
-import { SectionWrapper } from "../hoc";
+import { documentationImg, external_link, github } from "../assets";
 import { projects } from "../constants";
+import { SectionWrapper } from "../hoc";
+import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
@@ -16,6 +15,7 @@ const ProjectCard = ({
   image,
   source_code_link,
   documentation,
+  site_link,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 1.25)}>
@@ -37,6 +37,18 @@ const ProjectCard = ({
           />
 
           <div className='absolute inset-0 flex justify-end m-3 gap-2 card-img_hover'>
+            {site_link ? (
+            <div
+              onClick={() => window.open(site_link, "_blank")}
+              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+            >
+              <img
+                src={external_link}
+                alt='Live site'
+                className='w-full h-full object-contain'
+              />
+            </div>): console.log("avai")}
+            {source_code_link ? (
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
@@ -46,7 +58,8 @@ const ProjectCard = ({
                 alt='source code'
                 className='w-full h-full object-contain'
               />
-            </div>
+            </div>): console.log("avai")}
+
             {documentation ? (<div
                 onClick={() => window.open(documentation, "_blank")}
                 className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
