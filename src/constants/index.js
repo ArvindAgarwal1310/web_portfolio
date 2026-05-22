@@ -4,6 +4,7 @@ import {
   LinkedIn,
   LyraHome,
   StockAnalysis,
+  amazon,
   analyser360,
   assessify,
   aws,
@@ -26,7 +27,6 @@ import {
   python,
   reactjs,
   resume,
-  sme,
   tailwind,
   threejs,
   tutor,
@@ -148,14 +148,28 @@ import {
   
   const experiences = [
     {
-      title: "SDE Intern",
-      company_name: "DataDive AI",
+      title: "**SDE - 1**",
+      company_name: "Amazon",
+      additional: ["Hyderabad, India"],
+      icon: amazon,
+      iconBg: "#E6DEDD",
+      date: "January 2026 - Present",
+      points: [
+        "Migrated services from AWS Lambda to Amazon ECS with zero-downtime deployment, improving scalability, reliability.",
+        "Built an internal AI-powered agent integrated with MCP to automatically gather operational metrics, reducing recurring manual effort by ~4 engineering hours per week.",
+        "Developed detailed monitoring and observability metrics with automated ticket creation workflows, enabling faster incident detection and streamlined operational excellence processes."
+      ],
+    },
+    {
+      title: "SDE - AI + Backend",
+      company_name: "WhatsYum - Datadive AI",
+      additional: [ "*Intern : February 2024 - June 2025*", "*Full-time : June 2025 - December 2025*"],
       icon: datadive_ai,
       iconBg: "white",
-      date: "February 2024 - Present",
+      date: "February 2024 - December 2025",
       points: [
         "Spearheaded end-to-end MVP development from scratch, architecting robust back-end systems powered by cloud services and tailored database solutions for optimal performance and scalability.",
-        "Implemented voice-conversation support and AI-driven cross-selling, elevating user engagement anddriving sales growth.",
+        "Implemented voice-conversation support and AI-driven cross-selling, elevating user engagement and driving sales growth.",
         "Integrated with third-party apps-APIs(delivery services, payment gateways-cashfree, meta conversations) for enhanced functionality.",
       ],
     },
@@ -195,18 +209,7 @@ import {
         "Engaged in my inaugural technical internship, acquiring international exposure in the process.",
         "Participating in code reviews and providing constructive feedback to other developers.",
       ],
-    },
-    {
-      title: "Subject Matter Specialist",
-      company_name: "CodeOfFun",
-      icon: sme,
-      iconBg: "#FFFFFF",
-      date: "July 2021 - September 2021",
-      points: [
-        "Oﬀered solutions to a multitude of online inquiries and challenges pertaining to Physics and Mathematics, which were posted on diverse educational platforms.",
-        "Resolved questions of competitive diﬃculty and provided online explanations to fellow students.",
-      ],
-    },
+    }
   ];
   
   const testimonials = [

@@ -15,7 +15,7 @@ import resume from "./resume.png";
 import visit_site from "./visit_site.png";
 import web from "./web.png";
 
-
+import amazon from "./company/amazon.png";
 import datadive_ai from "./company/datadive_ai.png";
 import invsto from "./company/invsto.png";
 import kmit from "./company/kmit.png";
@@ -59,7 +59,7 @@ import tripguide from "./tripguide.png";
 
 
 export {
-  AdaanPradhan, analyser360, assessify, aws, backend, BrainT, c, carrent, close, creator, css, datadive_ai, docker, documentationImg, external_link, figma, flutter, git, github, github2, html, invsto, java, javascript, jobit, kmit, LinkedIn, logo,
+  AdaanPradhan, amazon, analyser360, assessify, aws, backend, BrainT, c, carrent, close, creator, css, datadive_ai, docker, documentationImg, external_link, figma, flutter, git, github, github2, html, invsto, java, javascript, jobit, kmit, LinkedIn, logo,
   logo1, LyraANS, LyraHome, menu, meta, mobile, mongodb,
   nodejs, python, reactjs,
   redux, resume, shopify, sme, starbucks, StockAnalysis, tailwind, tesla, threejs, tripguide, tutor, typescript, visit_site, web

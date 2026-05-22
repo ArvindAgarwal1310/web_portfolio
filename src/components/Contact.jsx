@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
-import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
+import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
+import { EarthCanvas } from "./canvas";
 
 
 
@@ -32,43 +32,58 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    // basic validation
+    if (!form.name || !form.email || !form.message) {
+      setLoading(false);
+      alert("Please fill out name, email and message before sending.");
+      return;
+    }
 
-    //B3wH0vd94jjiLRJAc
-    //template_wdh5rdd
-    //service_3nprowk
+    const SERVICE_ID = "service_3nprowk";
+    const TEMPLATE_ID = "template_wdh5rdd";
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_KEY;
 
-    emailjs
-      .send(
-        'service_3nprowk',
-        'template_wdh5rdd',
-        {
-          from_name: form.name,
-          to_name: "Arvind Agarwal",
-          from_email: form.email,
-          to_email: "arvindagarwal839@gmail.com",
-          message: form.message,
-        },
-        'B3wH0vd94jjiLRJAc'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+    (async () => {
+      try {
+        await emailjs.send(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          {
+            from_name: form.name,
+            to_name: "Arvind Agarwal",
+            from_email: form.email,
+            to_email: "arvindagarwal839@gmail.com",
+            message: form.message,
+          },
+          PUBLIC_KEY
+        );
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+        setLoading(false);
+        alert("Thank you. I will get back to you as soon as possible.");
 
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } catch (error) {
+        setLoading(false);
+        console.error("EmailJS send error:", error);
+        alert("There was some error. You can reach out to me at arvindagarwal839@gmail.com");
+      }
+    })();
   };
+
+  useEffect(() => {
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_KEY || "B3wH0vd94jjiLRJAc";
+    if (PUBLIC_KEY && emailjs && emailjs.init) {
+      try {
+        emailjs.init(PUBLIC_KEY);
+      } catch (err) {
+        console.warn("EmailJS init failed:", err);
+      }
+    }
+  }, []);
 
   return (
     <>
